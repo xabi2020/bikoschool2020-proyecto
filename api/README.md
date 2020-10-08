@@ -7,7 +7,7 @@ Proyecto base de express con typescript
 Estando en la carpeta `/api`:
 
 * `npm install`: instala las dependencias
-* `npm start`: inicia el serviodor en modo watch
+* `npm start`: inicia el servidor en modo watch
 
 ## Scripts
 
