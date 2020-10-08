@@ -41,7 +41,5 @@ function onError(error) {
 }
 
 function onListening() {
-  const addr = server.address()
-  var bind = typeof addr === 'string' ? addr : addr.port
-  console.log(`Listening on ${bind}`)
+  console.log(`Listening on port ${port}`)
 }
