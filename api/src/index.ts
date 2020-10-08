@@ -28,17 +28,13 @@ function onError(error) {
     throw error
   }
 
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port
-
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges')
+      console.error(`Port ${port} requires elevated privileges`)
       process.exit(1)
-      break
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use')
+      console.error(`Port ${port} is already in use`)
       process.exit(1)
-      break
     default:
       throw error
   }
@@ -46,6 +42,6 @@ function onError(error) {
 
 function onListening() {
   const addr = server.address()
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
-  console.log('Listening on ' + bind)
+  var bind = typeof addr === 'string' ? addr : addr.port
+  console.log(`Listening on ${bind}`)
 }
