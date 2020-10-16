@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 function App() {
-  return (
-    <div >
-      MemeAffinity
-    </div>
-  );
+  return <div>Movie Brazil GIF</div>
 }
 
-export default App;
+export default App
