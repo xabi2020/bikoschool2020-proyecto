@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-function App() {
-  return (
-    <>
-    Hello World!
-    </>
-  );
+const App: React.FC = () => {
+  return <>Movie Brazil GIF by MOODMAN!</>
 }
 
-export default App;
+export default App
