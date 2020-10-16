@@ -1,9 +1,17 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import App from './App'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('Listado de memes', () => {
+  it('should be a title in the document', () => {
+    render(<App />)
+    const titulo = screen.getByText('Listado ', { exact: false })
+    expect(titulo).toBeInTheDocument()
+  })
+
+  it('should have several images',() => {
+    render(<App />)
+    const listadoImagenes = screen.getAllByRole('img')
+    expect(listadoImagenes.length).toBeGreaterThan(1)
+  })
+})
