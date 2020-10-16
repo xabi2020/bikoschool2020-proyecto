@@ -3,5 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "prettier": "2.1.2"
+  },
+  "dependencies": {
+    "lint-staged": "^10.4.1"
+  }
 }
