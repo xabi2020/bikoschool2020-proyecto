@@ -1,9 +1,15 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import App from './App'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('List of memes', () => {
+  it('has a list of memes including "Movie Brazil GIF by MOODMAN"', async () => {
+    render(<App />)
+
+    const boulbasourTextElement = await screen.findByText(
+      /Movie Brazil GIF by MOODMAN/i,
+    )
+
+    expect(boulbasourTextElement).toBeInTheDocument()
+  })
+})
