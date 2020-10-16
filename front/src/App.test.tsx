@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import App from './App'
+import { memes } from './fixture/recent.json'
 
 describe('Listado de memes', () => {
   it('Debería mostrar el meme Movie Brazil GIF', () => {
@@ -8,5 +9,11 @@ describe('Listado de memes', () => {
     expect(
       screen.getByAltText('Movie Brazil GIF by MOODMAN'),
     ).toBeInTheDocument()
+  })
+  it('Debería mostrar el listado de memes', () => {
+    render(<App />)
+    for (const meme of memes) {
+      expect(screen.getByAltText(meme.title)).toBeInTheDocument()
+    }
   })
 })
