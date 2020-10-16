@@ -7,8 +7,7 @@ describe('renders learn react link', () => {
 
   it('Muestra un meme',() =>{
     render(<App />)
-    const memesArray = screen.getAllByLabelText('meme')
-    expect(memesArray.length).toEqual(50)
+    expect(screen.getByText("Movie Brazil GIF by MOODMAN")).toBeInTheDocument()
   });
 });
 
