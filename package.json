@@ -5,10 +5,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.11.0",
     "husky": "^4.3.0",
     "prettier": "2.1.2"
   },
   "dependencies": {
     "lint-staged": "^10.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "...": "..."
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
