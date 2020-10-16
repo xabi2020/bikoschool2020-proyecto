@@ -12,8 +12,11 @@ describe('Listado de memes', () => {
   })
   it('Debería mostrar el listado de memes', () => {
     render(<App />)
+
     for (const meme of memes) {
-      expect(screen.getByAltText(meme.title)).toBeInTheDocument()
+      const image = screen.queryByRole('img', { name: meme.title })
+      expect(image).toBeInTheDocument()
+      expect(image).toHaveAttribute('src', meme.images.small.url)
     }
   })
 })
