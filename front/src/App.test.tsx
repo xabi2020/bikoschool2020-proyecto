@@ -24,3 +24,11 @@ describe('Listado de memes', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Oops!')
   })
 })
+
+describe('Search memes', () => {
+  it('User should have a search', () => {
+    render(<App />)
+
+    expect(screen.getByRole('searchbox')).toBeInTheDocument()
+  })
+})
