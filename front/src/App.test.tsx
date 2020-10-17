@@ -4,36 +4,19 @@ import App from './App'
 import memes from './fixtures/memes.json'
 
 describe('List of memes', () => {
-  it('has a list of memes including "Movie Brazil GIF by MOODMAN"', async () => {
-    render(<App />)
-
-    const movieBrazilTextElement = await screen.findByText(
-      /Movie Brazil GIF by MOODMAN/i,
-    )
-
-    expect(movieBrazilTextElement).toBeInTheDocument()
-  })
-
-  it('has a list of memes', async () => {
+  it('should show memes', async () => {
     render(<App />)
 
     for (let meme of memes) {
       const memeTextElement = await screen.findByText(meme.title)
+      expect(
+        await screen.findByRole('img', { name: meme.title }),
+      ).toHaveAttribute('src', meme.image.url)
       expect(memeTextElement).toBeInTheDocument()
     }
   })
 
-  it('check if src url is printed', async () => {
-    render(<App />)
-
-    for (let meme of memes) {
-      expect(
-        await screen.findByRole('img', { name: meme.title }),
-      ).toHaveAttribute('src', meme.image.url)
-    }
-  })
-
-  it('retrieves the memes retrieved from the API', async () => {
+  it('should retrieve memes from resource', async () => {
     jest.spyOn(window, 'fetch')
 
     render(<App />)
