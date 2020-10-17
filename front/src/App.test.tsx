@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { server } from './mocks/server'
 import { rest } from 'msw'
 import App from './App'
@@ -36,8 +37,8 @@ describe('Search memes', () => {
     jest.spyOn(window, 'fetch')
 
     render(<App />)
-    const inputSearch = screen.getByRole('searchbox')
-    fireEvent.change(inputSearch, { target: { value: 'movie' } })
+
+    userEvent.type(screen.getByRole('searchbox'), 'movie')
 
     for (const meme of searchResultMovie.memes) {
       const image = await screen.findByRole('img', { name: meme.title })
