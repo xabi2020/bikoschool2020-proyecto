@@ -1,10 +1,5 @@
 import React from 'react'
-
-interface Meme {
-  id: string
-  title: string
-  src: string
-}
+import { getMemes, Meme } from './services/getMemes'
 
 const App: React.FC = () => {
   const [memes, setMemes] = React.useState<Meme[]>()
@@ -18,12 +13,6 @@ const App: React.FC = () => {
       ))}
     </>
   )
-}
-
-async function getMemes(): Promise<Meme[]> {
-  const apiResponse = await fetch('/api/memes')
-  const result = apiResponse.json()
-  return result
 }
 
 export default App

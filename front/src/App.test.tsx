@@ -16,7 +16,7 @@ describe('listado de memes', () => {
     }
   })
 
-  test('muestra el listado de memes desde api', async () => {
+  test('hace una llamada a la api', async () => {
     const fetch = jest.spyOn(window, 'fetch')
     render(<App />)
 
