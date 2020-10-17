@@ -3,11 +3,7 @@ import React, { useEffect, useState } from 'react'
 interface Meme {
   title: string
   id: string
-  images: {
-    small: {
-      url: string
-    }
-  }
+  url: string
 }
 
 async function getMemes(): Promise<Meme[]> {
@@ -50,7 +46,7 @@ const App: React.FC = () => {
         onChange={handleSearch}
       />
       {memes?.map((meme) => (
-        <img alt={meme.title} key={meme.id} src={meme.images.small.url} />
+        <img alt={meme.title} key={meme.id} src={meme.url} />
       ))}
     </>
   )

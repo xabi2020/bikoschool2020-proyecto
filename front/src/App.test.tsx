@@ -14,7 +14,7 @@ describe('Listado de memes', () => {
     for (const meme of memes) {
       const image = await screen.findByRole('img', { name: meme.title })
       expect(image).toBeInTheDocument()
-      expect(image).toHaveAttribute('src', meme.images.small.url)
+      expect(image).toHaveAttribute('src', meme.url)
     }
   })
   it('should show message error if the request fail', async () => {
@@ -44,7 +44,7 @@ describe('Search memes', () => {
     for (const meme of searchResultMovie.memes) {
       const image = await screen.findByRole('img', { name: meme.title })
       expect(image).toBeInTheDocument()
-      expect(image).toHaveAttribute('src', meme.images.small.url)
+      expect(image).toHaveAttribute('src', meme.url)
     }
   })
 })
