@@ -1,19 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
-import db from './db.json'
+
 
 
 function App() {
 
-  const [memes, setMemes] = useState([])
-  
+  const [memes, setMemes] = useState<any>([])
+
+  async function fetchUrl(url: string) {
+    debugger
+    const response = await fetch(url);
+    const json = await response.json();
+    debugger
+    setMemes(json);
+  }
+
+  useEffect(() => {
+   fetchUrl('/api/memes')
+  }); 
+
 
   return (
     <>
-    <div>Listado de memes</div>
-    {db.memes.slice(0, 2).map(element => <img src={element.images.original.url} alt={element.title}/>)}
+      <div>Listado de memes</div>
+      {
+        memes.slice(0, 2).map((element: any) => {
+          return <img key={element.id} src={element.images.original.url} alt={element.title} />
+        })
+      }
     </>
   );
 }
