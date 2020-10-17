@@ -18,11 +18,19 @@ async function getMemes(): Promise<Meme[]> {
 
 const App: React.FC = () => {
   const [memes, setMemes] = useState<Meme[]>([])
+  const [error, setError] = useState<string | null>()
 
   useEffect(() => {
-    getMemes().then(setMemes)
+    getMemes()
+      .then(setMemes)
+      .catch(() => {
+        setError('Oops!')
+      })
   }, [])
 
+  if (error) {
+    return <div role="alert">{error}</div>
+  }
   return (
     <>
       {memes?.map((meme) => (
