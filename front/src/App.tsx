@@ -33,6 +33,7 @@ const App: React.FC = () => {
   }
   return (
     <>
+      <input type="search" name="search" placeholder="Buscar meme..." />
       {memes?.map((meme) => (
         <img alt={meme.title} key={meme.id} src={meme.images.small.url} />
       ))}
