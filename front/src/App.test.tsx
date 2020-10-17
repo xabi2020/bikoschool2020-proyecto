@@ -15,14 +15,4 @@ describe('List of memes', () => {
       expect(memeTextElement).toBeInTheDocument()
     }
   })
-
-  it('should retrieve memes from resource', async () => {
-    jest.spyOn(window, 'fetch')
-
-    render(<App />)
-
-    expect(window.fetch).toHaveBeenCalledWith(
-      'http://localhost:3001/api/v1/memes',
-    )
-  })
 })
