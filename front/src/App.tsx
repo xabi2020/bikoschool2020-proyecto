@@ -2,23 +2,23 @@ import React from 'react';
 import './App.css';
 import { useState, useEffect } from 'react'
 
-
+const MEMES_URL = 'http://localhost:3000/memes'
 
 function App() {
 
   const [memes, setMemes] = useState<any>([])
 
-  async function fetchUrl(url: string) {
-    debugger
-    const response = await fetch(url);
+  const getMemes = async () => {
+    const response = await fetch(MEMES_URL);
     const json = await response.json();
-    debugger
-    setMemes(json);
+    return json
   }
 
   useEffect(() => {
-   fetchUrl('http://localhost:3000/memes')
-  }); 
+    getMemes()
+      .then(setMemes)
+      .catch()
+  }, []);
 
 
   return (
