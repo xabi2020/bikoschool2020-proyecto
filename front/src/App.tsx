@@ -17,7 +17,7 @@ function App() {
   }
 
   useEffect(() => {
-   fetchUrl('/memes')
+   fetchUrl('http://localhost:3000/memes')
   }); 
 
 
