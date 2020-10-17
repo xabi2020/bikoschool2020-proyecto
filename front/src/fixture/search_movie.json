@@ -1,0 +1,68 @@
+{
+  "memes": [
+    {
+      "id": "Lk0HfLIarOVAuejLud",
+      "type": "gif",
+      "slug": "moodman-rude-winston-Lk0HfLIarOVAuejLud",
+      "giphyUrl": "https://giphy.com/gifs/moodman-rude-winston-Lk0HfLIarOVAuejLud",
+      "title": "Winston Thats Rude GIF by MOODMAN",
+      "source_tld": "",
+      "source_post_url": "",
+      "import_datetime": "2020-08-17 19:05:41",
+      "username": "",
+      "images": {
+        "original": {
+          "width": "480",
+          "height": "270",
+          "url": "https://media3.giphy.com/media/Lk0HfLIarOVAuejLud/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+        },
+        "small": {
+          "width": "200",
+          "height": "113",
+          "url": "https://media3.giphy.com/media/Lk0HfLIarOVAuejLud/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+        }
+      },
+      "tags": [
+        "#rude",
+        "#winston",
+        "#how rude",
+        "#thats rude",
+        "#winston rude",
+        "#movie"
+      ]
+    },
+    {
+      "id": "k4N5AuZzd9bmo",
+      "type": "gif",
+      "slug": "80s-retro-1980s-k4N5AuZzd9bmo",
+      "giphyUrl": "https://giphy.com/gifs/80s-retro-1980s-k4N5AuZzd9bmo",
+      "title": "Heat Wave 80S GIF",
+      "source_tld": "djcoolhandj.tumblr.com",
+      "source_post_url": "https://djcoolhandj.tumblr.com/post/130399769748/source-fatmagic-httpifttt1ome3pt",
+      "import_datetime": "2015-10-08 08:32:08",
+      "username": "",
+      "images": {
+        "original": {
+          "width": "437",
+          "height": "308",
+          "url": "https://media3.giphy.com/media/k4N5AuZzd9bmo/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+        },
+        "small": {
+          "width": "200",
+          "height": "141",
+          "url": "https://media3.giphy.com/media/k4N5AuZzd9bmo/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
+        }
+      },
+      "tags": [
+        "#hot",
+        "#heat wave",
+        "#hot outside",
+        "#80s",
+        "#retro",
+        "#1980s",
+        "#heat",
+        "#movie"
+      ]
+    }
+  ]
+}
