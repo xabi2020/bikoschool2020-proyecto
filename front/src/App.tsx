@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <>
       {memes?.map((meme: Meme) => (
-        <img alt={meme.title} src={meme.src} key={meme.id} />
+        <img alt={meme.title} src={meme.url} key={meme.id} />
       ))}
     </>
   )

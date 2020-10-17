@@ -12,7 +12,7 @@ describe('listado de memes', () => {
         name: memeItem.title,
       })
 
-      expect(meme).toHaveAttribute('src', memeItem.src)
+      expect(meme).toHaveAttribute('src', memeItem.url)
     }
   })
 

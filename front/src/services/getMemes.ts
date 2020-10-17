@@ -1,7 +1,7 @@
 export interface Meme {
   id: string
   title: string
-  src: string
+  url: string
 }
 
 export async function getMemes(): Promise<Meme[]> {
