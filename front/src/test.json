@@ -1,24 +1,20 @@
 {
     "memes": [
         {
-        "id": "YleuWir5NTNVXkflSp",
-        "type": "gif",
-        "title": "Movie Brazil GIF by MOODMAN",
-        "import_datetime": "2020-08-20 02:24:22",
-        "username": "",
-        "images": {
-            "original": {
-            "width": "480",
-            "height": "269",
+            "title": "Movie Brazil GIF by MOODMAN",
             "url": "https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
-            },
-            "small": {
-            "width": "200",
-            "height": "112",
-            "url": "https://media4.giphy.com/media/YleuWir5NTNVXkflSp/200w.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=200w.gif"
-            }
         },
-        "tags": ["#movie", "#brazil", "#brazil the movie"]
-        }
+        {
+            "title": "Dance Dancing GIF by MOODMAN",
+            "url": "https://media3.giphy.com/media/J6OQEgOUNOU5BWfjFj/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+        },
+        {
+            "title": "Funny Gif Lol GIF by MOODMAN",
+            "url": "https://media1.giphy.com/media/l5DePfMmB09ZVkh3Af/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+        },
+        {
+            "title": "Sunglasses Horse GIF by MOODMAN",
+            "url": "https://media2.giphy.com/media/f4OBJD88w2M7MUVSqf/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif"
+        } 
     ]
 }
