@@ -23,12 +23,7 @@ describe('List of memes', () => {
   it('should show memes', async () => {
     server.use(
       rest.get('http://localhost:3001/api/v1/memes', (req, res, ctx) =>
-        res(
-          ctx.status(500),
-          ctx.json({
-            errorMessage,
-          }),
-        ),
+        res(ctx.status(500)),
       ),
     )
 
