@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
+import { memes } from './fixture/recent.json'
 
-function App() {
-  return (
-    <div >
-      MemeAffinity
-    </div>
-  );
-}
+const App: React.FC = () => (
+  <>
+    {memes.map((meme) => (
+      <img alt={meme.title} key={meme.id} src={meme.images.small.url} />
+    ))}
+  </>
+)
 
-export default App;
+export default App
