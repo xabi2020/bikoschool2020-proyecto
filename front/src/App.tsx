@@ -1,7 +1,16 @@
 import React from 'react';
-import {memes} from '../src/test.json'
 
-function App() {
+interface Meme{
+  title: string,
+  url: string
+}
+
+const App: React.FC=() => {
+  const [memes,setMemes] = React.useState<Meme[]>([])
+
+  React.useEffect(() => {
+    getMemes().then(setMemes)
+  },[])
   return (
     <>
         {memes.map((meme) => 
@@ -9,6 +18,12 @@ function App() {
         )}
     </>
   );
+}
+
+async function getMemes(): Promise<Meme[]>{
+  const response = await fetch("/api/memes")
+  const result = await response.json()
+  return result
 }
 
 export default App;

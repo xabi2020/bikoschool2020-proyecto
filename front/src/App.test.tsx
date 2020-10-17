@@ -5,20 +5,22 @@ import {memes} from '../src/test.json'
 
 describe('renders learn react link', () => {
 
-  it('Muestra un meme',() =>{
-    render(<App />)
-
-    expect(screen.getByRole("img",{name:"Movie Brazil GIF by MOODMAN"})).toHaveAttribute('src','https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif')
-  })
-
-  it("Muestra varios memes, en el mismo orden que el de las variables que se reciben", () =>{
+  it("Muestra varios memes, en el mismo orden que el de las variables que se reciben", async () =>{
+    jest.spyOn(window,"fetch").mockResolvedValue({ ok: true, json: async () => memes } as Response)
     render(<App />)
 
     for (let i = 0; i < memes.length; i++) {
-      let meme = screen.getByRole("img",{name:memes[i].title})
+      let meme = await screen.findByRole("img",{name:memes[i].title})
       expect(meme).toHaveAttribute("alt",memes[i].title)
       expect(meme).toHaveAttribute("src",memes[i].url)
     }
+  })
+
+  it('obtiene el listado de memes del api', async() =>{
+    jest.spyOn(window,"fetch").mockResolvedValue({ ok: true, json: async () => memes } as Response)
+    render(<App />)
+
+    expect(window.fetch).toBeCalledWith('/api/memes')
   })
 })
 
