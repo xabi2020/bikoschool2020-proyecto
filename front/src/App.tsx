@@ -18,9 +18,11 @@ async function getMemes(): Promise<Meme[]> {
 
 const App: React.FC = () => {
   const [memes, setMemes] = useState<Meme[]>([])
+
   useEffect(() => {
     getMemes().then(setMemes)
   }, [])
+
   return (
     <>
       {memes?.map((meme) => (
