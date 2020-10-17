@@ -39,13 +39,12 @@ describe('Search memes', () => {
     render(<App />)
 
     userEvent.type(screen.getByRole('searchbox'), 'movie')
+    expect(window.fetch).toBeCalledWith('http://127.0.0.1/?search=movie')
 
     for (const meme of searchResultMovie.memes) {
       const image = await screen.findByRole('img', { name: meme.title })
       expect(image).toBeInTheDocument()
       expect(image).toHaveAttribute('src', meme.images.small.url)
     }
-
-    expect(window.fetch).toBeCalledWith('http://127.0.0.1/search?movie')
   })
 })

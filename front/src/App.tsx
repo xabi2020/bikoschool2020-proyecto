@@ -16,6 +16,12 @@ async function getMemes(): Promise<Meme[]> {
   return memes
 }
 
+async function searchMemes(term: string): Promise<Meme[]> {
+  const response = await fetch('http://127.0.0.1/?search=' + term)
+  const { memes } = await response.json()
+  return memes
+}
+
 const App: React.FC = () => {
   const [memes, setMemes] = useState<Meme[]>([])
   const [error, setError] = useState<string | null>()
@@ -28,12 +34,21 @@ const App: React.FC = () => {
       })
   }, [])
 
+  const handleSearch = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = ev.target
+    searchMemes(value).then(setMemes)
+  }
   if (error) {
     return <div role="alert">{error}</div>
   }
   return (
     <>
-      <input type="search" name="search" placeholder="Buscar meme..." />
+      <input
+        type="search"
+        name="search"
+        placeholder="Buscar meme..."
+        onChange={handleSearch}
+      />
       {memes?.map((meme) => (
         <img alt={meme.title} key={meme.id} src={meme.images.small.url} />
       ))}
