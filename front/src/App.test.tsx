@@ -23,6 +23,16 @@ describe('List of memes', () => {
     }
   })
 
+  it('check if src url is printed', async () => {
+    render(<App />)
+
+    for (let meme of memes) {
+      expect(
+        await screen.findByRole('img', { name: meme.title }),
+      ).toHaveAttribute('src', meme.image.url)
+    }
+  })
+
   it('retrieves the memes retrieved from the API', async () => {
     jest.spyOn(window, 'fetch')
 
