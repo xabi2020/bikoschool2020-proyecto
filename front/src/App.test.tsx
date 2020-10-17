@@ -29,7 +29,7 @@ describe('List of memes', () => {
     render(<App />)
 
     expect(window.fetch).toHaveBeenCalledWith(
-      'https://localhost:3001/api/v1/memes',
+      'http://localhost:3001/api/v1/memes',
     )
   })
 })

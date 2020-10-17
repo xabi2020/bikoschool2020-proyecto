@@ -1,10 +1,18 @@
 import React from 'react'
-import memes from './../src/fixtures/memes.json'
+import { getMemesData, MemesData } from './services/getMemesData'
+
 const App: React.FC = () => {
+  const [memesData, setMemesData] = React.useState<MemesData[]>([])
+  React.useEffect(() => {
+    getMemesData().then((data) => {
+      setMemesData(data)
+    })
+  }, [])
+
   return (
     <>
       <ul>
-        {memes.map((meme) => (
+        {memesData.map((meme) => (
           <li key={meme.id}>
             <img src={meme.image.url} alt={meme.title} /> {meme.title}
           </li>
