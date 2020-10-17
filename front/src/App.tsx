@@ -1,12 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react'
+import db from './db.json'
+
 
 function App() {
+
+  const [memes, setMemes] = useState([])
+  
+
   return (
     <>
     <div>Listado de memes</div>
-    <img src='https://i.pinimg.com/originals/52/8M6/fe/5286fe86fbdd8ec13c4e81bde0e3dfdf.jpg' alt='Meme de shrek'/>
+    {db.memes.slice(0, 2).map(element => <img src={element.images.original.url} alt={element.title}/>)}
     </>
   );
 }
