@@ -1,10 +1,10 @@
 import React from 'react';
-import arrayMemes from '../src/test.json'
+import {memes} from '../src/test.json'
 
 function App() {
   return (
     <>
-        {arrayMemes.memes.map((meme) => 
+        {memes.map((meme) => 
           <img src={meme.url} alt={meme.title}></img>
         )}
     </>
