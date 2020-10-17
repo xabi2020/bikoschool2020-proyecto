@@ -17,7 +17,7 @@ function App() {
   }
 
   useEffect(() => {
-   fetchUrl('/api/memes')
+   fetchUrl('/memes')
   }); 
 
 
