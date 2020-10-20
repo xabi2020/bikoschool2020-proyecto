@@ -8,7 +8,6 @@ const App: React.FC = () => {
   React.useEffect(() => {
     getMemesData()
       .then((data) => {
-        console.log(data)
         setMemesData(data)
       })
       .catch((error) => {
