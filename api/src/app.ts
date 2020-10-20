@@ -10,7 +10,9 @@ export function createApp(db: Lowdb.LowdbSync<DatabaseSchema>) {
 
   // Shows request log on terminal
   // https://github.com/expressjs/morgan
-  app.use(logger('combined'))
+  if (process.env.NODE_ENV !== 'test') {
+    app.use(logger('combined'))
+  }
 
   // Añade el adaptador de la base de datos en cada petición
   app.use((req, _res, next) => {
